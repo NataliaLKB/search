@@ -1,1 +1,1 @@
-web: http-server -p process.env.PORT
+web: http-server -p $PORT

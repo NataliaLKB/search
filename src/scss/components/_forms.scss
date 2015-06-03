@@ -22,7 +22,7 @@ table {
 }
 
 form {
-	padding: 2.5rem 5rem 0.5rem;
+	padding: 0.5rem 5rem 0.5rem;
 	width: 100%;
 }
 
@@ -49,4 +49,10 @@ input[type="text"] {
 	border-top: 1px $light-blue solid;
 	background-color: $light-grey;
 	padding: 1rem;
+}
+
+.error {
+	color: orange;
+  	text-align: center;
+  	margin: 0;
 }
