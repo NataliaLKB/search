@@ -14,7 +14,7 @@
     "build": "browserify -t reactify --es6 src/app.jsx -o public/js/app.js",
     "build:watch": "watchify src/app.jsx -t reactify --es6 -o public/js/app.js",
     "lint": "jsxhint src/**/*.jsx",
-    "serve": "http-server -s -o"
+    "serve": "http-server -s -o -a localhost"
   },
   "repository": {
     "type": "git",
