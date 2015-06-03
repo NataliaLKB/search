@@ -12,8 +12,8 @@
     "sass": "node-sass --output-style compressed ./src/scss/main.scss ./public/css/main.css",
     "sass:watch": "node-sass --watch ./src/scss/main.scss ./public/css/main.css",
     "prebuild": "npm run lint",
-    "build": "browserify -t reactify --es6 src/app.jsx -o public/js/app.js",
-    "build:watch": "watchify src/app.jsx -t reactify --es6 -o public/js/app.js",
+    "build": "browserify -t reactify --es6 src/app.jsx -o public/app.js",
+    "build:watch": "watchify src/app.jsx -t reactify --es6 -o public/app.js",
     "lint": "jsxhint src/**/*.jsx",
     "serve": "http-server -s -o -a localhost"
   },

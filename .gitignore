@@ -3,4 +3,4 @@ creds.json
 .sass-cache
 main.css.map
 main.css
-public/js/app.js
+public/app.js

@@ -33,13 +33,13 @@ var Container = React.createClass({
 		return {
 			searchTerm: "",
 			posts: null
-		}
+		};
 	},
 
 	searchChange: function(e) {
 		this.setState({
 			searchTerm: e.target.value
-		})
+		});
 
 		this.submitSearch();
 	},
@@ -53,7 +53,7 @@ var Container = React.createClass({
 
 			this.setState({
 				posts: json
-			})
+			});
 
 		}.bind(this));
 	},
@@ -65,11 +65,7 @@ var Container = React.createClass({
 				<SearchBox searchTerm={ this.state.searchTerm } 
 							handleChange={ this.searchChange }
 							submitSearch={ this.submitSearch } />
-				{( this.state.posts
-					? <Content posts={this.state.posts}/>
-					: <p></p>
-				)}
-				
+				{( this.state.posts ? <Content posts={this.state.posts}/> : <p></p> )}	
 			</div>
 		);
 	}
