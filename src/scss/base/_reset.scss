@@ -20,3 +20,14 @@ h5 {
 	  width: 23%;
 	}
 }
+
+@media (max-width: 60em) {
+  	.row.space {
+  		.column-4 {
+		    width: 46%;
+		  	float: left;
+		  	margin-right: 2%;
+		  	margin-left: 2%;
+	  	}
+	}
+}
