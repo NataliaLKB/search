@@ -7,6 +7,8 @@ install:
 before_script:
 - git config --global user.email USER_EMAIL
 - git config --global user.name USER_NAME
+- touch creds.json
+- echo '{ "apiKey": API_KEY }' > creds.json
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - echo node_modules/ > .gitignore
