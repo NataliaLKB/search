@@ -1,5 +1,5 @@
 var React 		= require("react");
-var apiKey 		= require("../../creds.json").apiKey;
+var apiKey 		= process.env.API_KEY || require("../../creds.json").apiKey;
 var Header 		= require("./header.jsx");
 var SearchBox 	= require("./search-container.jsx");
 var Content 	= require("./content.jsx");

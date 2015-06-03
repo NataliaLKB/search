@@ -1,0 +1,16 @@
+branches:
+  only:
+  - master
+language: node_js
+install:
+- npm install
+script:
+- npm run sass & npm run build
+node_js:
+- 0.10.32
+deploy:
+  provider: heroku
+  app: search-challenge
+  on: master
+  api_key:
+    secure: dRP9upuqPw7uXw83O6ary15j11ZX0TQxzIi6LxoyqzUBOYVDnyo5QWckXRF8p3vBY6SyhUjWvQF7jcFDbDMUL2BgjrCtEwtT/I4ssat9Qnnb5ruVUH8FJoqIXxBbKUwHzHymnqvvk9KfVHdfHZ513LAMAo2GLt21CRJzShNL95XI0E0IYgY78ctpACh0gWpI6QSNzY/8zNYGCPF4xwhp5WP4y3kbRGT+bJ25KSRxVZa2oRAvCUFHkRGwMQ5vcnqK3Z5yVSyIAvAjWZ6msJV/eq32RrWqy14tF1abx1ugun7DHLF2spzFPw/JMPwKvhpcetqXs48V+8vTejDnnCaJ0U2WxCE0s4y4WhOmzZNDgI4FR/35XsAjDk0Y4UzJ2NSrdXEffCBCeqtmA/B0GMQDy/1YdySi9DfvwlvB53PkMZcQg6l3puzPFlNd81wAe2IOoo1TekU//PTMyptBJ8vyO0Flb8DuOr9b3AgEUr9jWJUNzhfKsJk45CiY7P2VnDeTQNE+kjO9yrPutx0XNKrPdrTKRmdcB7ErfiAlNB+lBLDb2De2T/7wiyvaGhinH5io6dnwJcdKD2E7kANn4cBZdB9a6FNW8sYbOWj8nve8g+zci+xErLyadUCB/JGkR6+NRQXX6WVboHtkq23RLyHNSG5LT4wcuqvLaj6a/V10B+A=
