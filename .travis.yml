@@ -4,13 +4,24 @@ branches:
 language: node_js
 install:
 - npm install
+before_script:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- echo node_modules/ > .gitignore
 script:
 - npm run sass & npm run build
 node_js:
 - 0.10.32
+before_deploy:
+- git status
+- git add .
+- git commit -m "guardian search challenge"
 deploy:
   provider: heroku
   app: search-challenge
   on: master
   api_key:
     secure: dRP9upuqPw7uXw83O6ary15j11ZX0TQxzIi6LxoyqzUBOYVDnyo5QWckXRF8p3vBY6SyhUjWvQF7jcFDbDMUL2BgjrCtEwtT/I4ssat9Qnnb5ruVUH8FJoqIXxBbKUwHzHymnqvvk9KfVHdfHZ513LAMAo2GLt21CRJzShNL95XI0E0IYgY78ctpACh0gWpI6QSNzY/8zNYGCPF4xwhp5WP4y3kbRGT+bJ25KSRxVZa2oRAvCUFHkRGwMQ5vcnqK3Z5yVSyIAvAjWZ6msJV/eq32RrWqy14tF1abx1ugun7DHLF2spzFPw/JMPwKvhpcetqXs48V+8vTejDnnCaJ0U2WxCE0s4y4WhOmzZNDgI4FR/35XsAjDk0Y4UzJ2NSrdXEffCBCeqtmA/B0GMQDy/1YdySi9DfvwlvB53PkMZcQg6l3puzPFlNd81wAe2IOoo1TekU//PTMyptBJ8vyO0Flb8DuOr9b3AgEUr9jWJUNzhfKsJk45CiY7P2VnDeTQNE+kjO9yrPutx0XNKrPdrTKRmdcB7ErfiAlNB+lBLDb2De2T/7wiyvaGhinH5io6dnwJcdKD2E7kANn4cBZdB9a6FNW8sYbOWj8nve8g+zci+xErLyadUCB/JGkR6+NRQXX6WVboHtkq23RLyHNSG5LT4wcuqvLaj6a/V10B+A=
+env:
+  global:
+    secure: eIKgZqVuailImc0hg/Mep9EZb4nl3uqkYCpG/wrjt85X93LEM7RVnuuP7IS2gq97sjg1uen14NS/b0WI4sV7iCMyacBxddE1dgyK/l3rn2riUZtmEoCd2reIJ4NYdg0nUM21x8GNXtg9iBA1H3H661PIHwaJP9C3fZqL4miqfrfjVgsA9Bo5bSEWALQvSgo+89QQrR7puk36Bz+TPTVugeZZnGr27EAx1KFrBxIXf+UbRYMzpNq/UFOtdu3ErMWktUvTvSxjPNf+l5CzFh7HvQlTLLoTTu1frjO3vy+rCyGwUsDi6LnsIi7SzT5hiFiqt0y6GsVacCh8yrb86TZTxHl4BalHAoF3LfLaJxnjyehNeHjLeuG6pNMFlikU+j0dOCzZxS4DKnLa7oC9GsbOIa62uEUKuAMmt/WYq039eMvuW8dpbAQuTDsn6z9MshY5G2kTUsPxLUwxjwQeB+EgmmAT2gOzBC+XzS2WWRIXbt5oolzYvl6WzuNPlnumo4IbdgUSc3DO6/HeOqZEVupAv7qh7manmvoDp0c7fxSa5Fq6DhEiIWL8/AvMenF3LlbqjEwTHTVzQuMknHtRnsmuvnpVHjrl8s7xlI1PLAzelcP7nFcH8NyoubkIboIV94DZSVWk/r2/CStFwPmozBqmRwXeU9/dhL4u7MpZ0aYBD8s=
