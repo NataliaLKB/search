@@ -1,0 +1,22 @@
+a {
+	text-decoration: none;
+	color: $blue;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+h5 {
+	color: $grey;
+	margin: 0;
+}
+
+.row.space{
+	div {
+		margin-left: 0;
+		margin-right: 2%;
+	}
+	.column-4 {
+	  width: 23%;
+	}
+}
