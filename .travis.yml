@@ -17,7 +17,9 @@ node_js:
 before_deploy:
 - git status
 - git add .
+- git status
 - git commit -m "guardian search challenge"
+- git status
 deploy:
   provider: heroku
   app: search-challenge

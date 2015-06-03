@@ -8,11 +8,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run serve & npm run build:watch & npm run sass:watch",
+    "start": "npm run serve & npm run build & npm run sass",
     "sass": "node-sass --output-style compressed ./src/scss/main.scss ./public/css/main.css",
     "sass:watch": "node-sass --watch ./src/scss/main.scss ./public/css/main.css",
     "prebuild": "npm run lint",
-    "build": "browserify -t reactify --es6 src/app.jsx -o public/app.js",
+    "build": "browserify -t reactify src/app.jsx > public/app.js",
     "build:watch": "watchify src/app.jsx -t reactify --es6 -o public/app.js",
     "lint": "jsxhint src/**/*.jsx",
     "serve": "http-server -s -o -a localhost"
@@ -32,10 +32,13 @@
     "react": "^0.13.3"
   },
   "devDependencies": {
+    "babel": "^5.4.7",
+    "babelify": "^6.1.2",
     "browserify": "^10.2.3",
     "jsxhint": "^0.15.1",
     "node-sass": "^3.1.2",
     "reactify": "^1.1.1",
+    "ulimit": "0.0.2",
     "watchify": "^3.2.1"
   }
 }
