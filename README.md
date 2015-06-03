@@ -3,7 +3,15 @@
 
 
 # Run
-you will need a creds.json file with a guardian api key in it.
+To run you will need a creds.json file with a guardian api key in it. It will look like this:
+
+```
+{
+	"apiKey": "wj4wcsymtbpb9uhez9d8dnm7"
+}
+```
+
+Then:
 
 ```
 npm install

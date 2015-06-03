@@ -40,10 +40,14 @@ var Container = React.createClass({
 		this.setState({
 			searchTerm: e.target.value
 		})
+
+		this.submitSearch();
 	},
 
 	submitSearch: function(e) {
-		e.preventDefault();
+		if (e) {
+			e.preventDefault();
+		}
 
 		getPosts(this.state.searchTerm, function(json) {
 

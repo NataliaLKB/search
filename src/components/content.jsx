@@ -1,20 +1,21 @@
 var React = require("react");
 var Post = require("./post.jsx");
 
-var content = React.createClass({	
+var content = React.createClass({
 	render: function() {
-		console.log(this.props.posts, this.props.posts.length);
+
+		var posts = this.props.posts.map(function(post){
+		    return <Post post={post} key={post.id}/>;
+		}.bind(this));
+
 		return (
-			<div className="content-container column-12 push-2">
+	        <div className="content-container column-12 push-2">
 				<div className="row space">
-					{ this.props.posts.map(function(post){
-					    return <Post post={post}/>;
-					})}
+						{posts}
 				</div>
 			</div>
 		);
 	}
-
 });
 
 module.exports = content;
