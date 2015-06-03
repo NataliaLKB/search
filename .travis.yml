@@ -5,8 +5,6 @@ language: node_js
 before_install:
 - git config --global user.email USER_EMAIL
 - git config --global user.name USER_NAME
-- touch creds.json
-- process.env.ECHO_API_KEY
 install:
 - npm install
 before_script:
