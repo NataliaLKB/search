@@ -4,30 +4,6 @@ var Header 		= require("./header.jsx");
 var SearchBox 	= require("./search-container.jsx");
 var Content 	= require("./content.jsx");
 
-// TODO: put in lib/utils dir
-function getPosts (searchTerm, cb) {
-
-	var httpRequest = new XMLHttpRequest();
-	var searchUrl 	= "http://content.guardianapis.com/search?" +
-					"q=" + searchTerm + "&api-key=" + apiKey;
-
-	httpRequest.onreadystatechange = function(){
-      	if (httpRequest.readyState === 4) {
-
-      	  	if (httpRequest.status === 200) {
-
-      	  	  	var JSONresponse = JSON.parse(httpRequest.responseText).response.results;
-      	  	  	cb(JSONresponse);
-      	  	} else {
-      	  		// TODO: better error handling here
-      	  	  	console.log('There was a problem with the request.');
-      	  	}
-      	}
-    };
-    httpRequest.open("GET", searchUrl, true);
-    httpRequest.send();
-}
-
 var Container = React.createClass({
 	getInitialState: function() {
 		return {
@@ -49,7 +25,7 @@ var Container = React.createClass({
 			e.preventDefault();
 		}
 
-		getPosts(this.state.searchTerm, function(json) {
+		require("../lib/get-content.js")(this.state.searchTerm, function(json) {
 
 			this.setState({
 				posts: json
