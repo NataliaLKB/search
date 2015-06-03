@@ -1,0 +1,27 @@
+.search-container {
+	margin-top: 4rem;
+	background-color: $light-grey;
+	border: 1px $grey-border solid;
+	hr {
+		background-color: white;
+		height: 3px;
+		margin: 0 4rem 1.5rem;
+	}
+}
+
+.content-container {
+	margin-top: 2rem;
+}
+
+.post {
+	margin-bottom: 1rem;
+	border-top: 1px $light-blue solid;
+	background-color: $light-grey;
+	padding: 1rem;
+}
+
+.error {
+	color: orange;
+  	text-align: center;
+  	margin: 0;
+}

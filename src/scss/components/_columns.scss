@@ -1,0 +1,21 @@
+.row.space {
+	div {
+		margin-left: 0;
+		margin-right: 2%;
+	}
+	.column-4 {
+	  	width: 23%;
+	  	height: 6rem;
+	}
+}
+
+@media (max-width: 60em) {
+  	.row.space {
+  		.column-4 {
+		    width: 46%;
+		  	float: left;
+		  	margin-right: 2%;
+		  	margin-left: 2%;
+	  	}
+	}
+}

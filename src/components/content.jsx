@@ -1,5 +1,5 @@
 var React = require("react");
-var Post = require("./post.jsx");
+var Post  = require("./post.jsx");
 
 var content = React.createClass({
 	render: function() {
