@@ -19809,32 +19809,117 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":29}],157:[function(require,module,exports){
-var React = require("react");
-// var Container = require("./container.jsx");
+var React 		= require("react");
+var Header 		= require("./header.jsx");
+var SearchBox 	= require("./search-container.jsx");
+var Content 	= require("./content.jsx");
 
 
 var Container = React.createClass({displayName: "Container",
 	getInitialState: function() {
 		return {
-
+			searchTerm: "",
+			posts: []
 		}
 	},
 
-	componentDidMount: function() {
+	searchChange: function(e) {
+		this.setState({
+			searchTerm: e.target.value
+		})
+	},
 
+	submitSearch: function(e) {
+		e.preventDefault();
+		console.log("submitting!");
 	},
 	
 	render: function() {
 		return (
-			React.createElement("h1", null, "This is working...")
+			React.createElement("div", null, 
+				React.createElement(Header, null), 
+				React.createElement(SearchBox, {searchTerm:  this.state.searchTerm, 
+								handleChange:  this.searchChange, 
+								submitSearch:  this.submitSearch}), 
+				React.createElement(Content, {posts: this.state.posts})
+			)
+		);
+	}
+});
+
+module.exports = Container;
+
+},{"./content.jsx":158,"./header.jsx":159,"./search-container.jsx":160,"react":156}],158:[function(require,module,exports){
+var React = require("react");
+
+var content = React.createClass({displayName: "content",	
+	render: function() {
+		return (
+			React.createElement("div", {className: "content-container column-12 push-2"}, 
+				React.createElement("h1", null, "content working")
+			)
 		);
 	}
 
 });
 
-module.exports = Container;
+module.exports = content;
 
-},{"react":156}],158:[function(require,module,exports){
+},{"react":156}],159:[function(require,module,exports){
+var React = require("react");
+
+var Header = React.createClass({displayName: "Header",	
+	render: function() {
+		return (
+			React.createElement("header", {className: "column-16"}, 
+				React.createElement("div", {className: "column-10"}, 
+					React.createElement("h1", null, "I am a header")
+				), 
+				React.createElement("div", {className: "column-6"}, 
+					React.createElement("img", {src: "./img/logo.png"})
+				)
+			)
+		);
+	}
+
+});
+
+module.exports = Header;
+
+},{"react":156}],160:[function(require,module,exports){
+var React = require("react");
+
+var searchContainer = React.createClass({displayName: "searchContainer",	
+	render: function() {
+		return (
+			React.createElement("div", {className: "search-container column-8 push-4"}, 
+				React.createElement("form", {onSubmit:  this.props.submitSearch}, 
+					React.createElement("table", null, 
+						React.createElement("tbody", null, 
+							React.createElement("tr", null, 
+								React.createElement("td", null, 
+									React.createElement("input", {type: "text", 
+											placeholder: "search", 
+											value:  this.props.searchTerm, 
+											onChange:  this.props.handleChange})
+								), 
+								React.createElement("td", {className: "search"}, 
+									React.createElement("input", {type: "image", src: "./img/magnifying_glass.png"})
+								)
+							)
+						)
+					)
+				), 
+				React.createElement("hr", null)
+			)
+		);
+	}
+
+});
+
+module.exports = searchContainer;
+
+},{"react":156}],161:[function(require,module,exports){
 var React 	 = require("react");
 var Container = require("./components/container.jsx");
 
@@ -19843,4 +19928,4 @@ React.render(
 	document.getElementById("content")
 );
 
-},{"./components/container.jsx":157,"react":156}]},{},[158]);
+},{"./components/container.jsx":157,"react":156}]},{},[161]);

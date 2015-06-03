@@ -1,1 +1,4 @@
 node_modules/
+creds.json
+*.css.map
+.sass-cache
