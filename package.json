@@ -8,12 +8,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run serve & npm run live-reload & npm run build:watch",
+    "start": "npm run serve & npm run build:watch",
     "prebuild": "npm run lint",
-    "build": "browserify -t reactify --es6 src/js/main.jsx -o build/js/main.js",
-    "build:watch": "watchify src/js/main.jsx -t reactify --es6 -o build/js/main.js",
+    "build": "browserify -t reactify --es6 src/app.jsx -o public/js/app.js",
+    "build:watch": "watchify src/app.jsx -t reactify --es6 -o public/js/app.js",
     "lint": "jsxhint src/**/*.jsx",
-    "serve": "http-server -s"
+    "serve": "http-server -s -o"
   },
   "repository": {
     "type": "git",
