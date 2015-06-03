@@ -7,7 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run serve & npm run live-reload & npm run build:watch",
+    "prebuild": "npm run lint",
+    "build": "browserify -t reactify --es6 src/js/main.jsx -o build/js/main.js",
+    "build:watch": "watchify src/js/main.jsx -t reactify --es6 -o build/js/main.js",
+    "lint": "jsxhint src/**/*.jsx",
+    "serve": "http-server -s"
   },
   "repository": {
     "type": "git",
@@ -26,7 +32,6 @@
     "browserify": "^10.2.3",
     "http-server": "^0.8.0",
     "jsxhint": "^0.15.1",
-    "live-reload": "^1.1.0",
     "reactify": "^1.1.1",
     "watchify": "^3.2.1"
   }
