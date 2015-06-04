@@ -3,8 +3,6 @@
 
 Live [here](https://search-challenge.herokuapp.com/)!
 
-[![Build Status](https://travis-ci.org/NataliaLKB/search.svg?branch=master)](https://travis-ci.org/NataliaLKB/search)
-
 # Run
 To run you will need a creds.json file with a guardian api key in it. It will look like this:
 
