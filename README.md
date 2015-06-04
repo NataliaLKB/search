@@ -1,6 +1,8 @@
 # Search a term
 ### Searching Through the Guardian Content Api
 
+Live [here](https://search-challenge.herokuapp.com/)!
+
 [![Build Status](https://travis-ci.org/NataliaLKB/search.svg?branch=master)](https://travis-ci.org/NataliaLKB/search)
 
 # Run

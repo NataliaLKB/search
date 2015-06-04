@@ -4,7 +4,7 @@
     function getPosts(searchTerm, apiKey, cb) {
 
         var httpRequest = new XMLHttpRequest();
-        var searchUrl   = "http://content.guardianapis.com/search?" +
+        var searchUrl   = "https://content.guardianapis.com/search?" +
                         "q=" + searchTerm + "&api-key=" + apiKey;
 
         httpRequest.onreadystatechange = function(){
