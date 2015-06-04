@@ -3,6 +3,12 @@ form {
 	width: 100%;
 }
 
+@media (max-width: 60em) {
+	form {
+		padding: 0.5rem 3rem 0.5rem;
+	}
+}
+
 input {
 	width: 100%;
 	height: 35px;
@@ -12,9 +18,10 @@ input {
 
 .search {
 	padding: 1px;
+	width: 35px;
 	input {
 		height: 35px;
-	  	width: 35px;
+	  	width: 100%;
 	  	padding: 6px;
 		background-color: $blue;
 	}

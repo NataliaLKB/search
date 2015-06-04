@@ -1,6 +1,6 @@
 var React       = require("react");
 var SearchError = require("./error.jsx");
-var message     = "Sorry, there doesn't seem to be any posts with that search term";
+var message     = "Sorry, no results.";
 
 var searchContainer = React.createClass({   
     render: function() {
