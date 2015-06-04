@@ -6,17 +6,13 @@ Live [here](https://search-challenge.herokuapp.com/)!
 [![Build Status](https://travis-ci.org/NataliaLKB/search.svg?branch=master)](https://travis-ci.org/NataliaLKB/search)
 
 # Run
-To run you will need a creds.json file with a guardian api key in it. It will look like this:
-
-```
-{
-	"apiKey": "wj4wcsymtbpb9uhez9d8dnm7"
-}
-```
-
-Then:
 
 ```
 npm install
 npm start
 ```
+
+
+#Test
+
+When you are serving the app, navigate to `http://localhost:8080/test/test.html` to see them in action!

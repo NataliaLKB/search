@@ -5,7 +5,7 @@ var Header = React.createClass({
         return (
             <header className="column-16">
                 <div className="column-4 push-12">
-                    <img src="./img/logo.png" />
+                    <img src="./img/logo.png" alt="The Guardian"/>
                 </div>
             </header>
         );
