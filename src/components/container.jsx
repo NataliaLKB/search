@@ -16,9 +16,7 @@ var Container = React.createClass({
     searchChange: function(e) {
         this.setState({
             searchTerm: e.target.value
-        });
-
-        this.submitSearch();
+        }, this.submitSearch);
     },
 
     submitSearch: function(e) {
